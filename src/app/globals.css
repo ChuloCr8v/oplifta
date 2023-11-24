@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@font-face {
+  font-family: "Handwriting";
+  src: url("/fonts/JustAnotherHand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-handwriting {
+  font-family: "Handwriting";
+  letter-spacing: 1.5pt;
+}
+
+.hero-bold-font {
+  font-family: "Anton";
+  letter-spacing: 1.5pt;
+}
+
+html {
+  scroll-behavior: smooth;
+  letter-spacing: 0.6pt;
+  overflow-x: hidden;
+  /* line-height: 1.8; */
+}
+/* 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+.flex-row-item,
+.justify-items-between,
+.flex-column {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-items-between {
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 80rem;
+}
+
+.link-btn:hover .link-border {
+  width: 100%;
+}
+
+.ant-select {
+  min-width: 100%;
+}
+
+:where(.css-dev-only-do-not-override-2i2tap).ant-select:not(
+    .ant-select-disabled
+  ):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
+  .ant-select-selector {
+  padding: 28px 20px !important;
+  width: 100%;
+}
+
+:where(.css-dev-only-do-not-override-2i2tap).ant-select:not(
+    .ant-select-disabled
+  ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
+  .ant-select-selector {
+  border: 1px #ec50b5 solid;
+  animation-duration: 300ms;
+}
+
+@media (min-width: 768px) {
+  .service-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: 2;
+  }
+
+  .service-item:nth-child(3) {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: 2;
+  }
+
+  .service-item:nth-child(3) {
+    grid-column: 3 / span 1;
+  }
+}
